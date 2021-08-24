@@ -1,0 +1,265 @@
+@keyframes road1{
+    0%{ top: 50%; left: -80px;}
+    20%{
+        top: 5%;
+        left: 25%;
+    }
+    40%{
+        top: 75%;
+        left: 45%;
+        transform: rotate(135deg);
+    }
+    70%{
+        top: 15%;
+        left: 75%;
+        transform: rotate(0deg);
+    }
+    100%{
+        top: 85%;
+        left: 110%;
+    }
+
+}
+
+@keyframes road2 {
+    0%{
+top: 50%;
+left: -80px;
+}
+    5%{ 
+        top: 10%;
+        left: 30%;
+        transform: scale(0.5);
+    }
+    10%{
+        top: 34%;
+        left: 50%;
+        transform: scale(1.5);
+        transform: rotate(180deg);
+    }
+    15%{
+        top: 5%;
+        left: 25%;
+        transform: scale(1.0);
+        transform: rotate(0deg);
+    }
+    20%{
+        top: 40%;
+        left: 80%;
+    }
+    25%{
+    top: 25%;
+    left: 65%;
+    transform: scale(2.5);
+    }
+    30%{
+    top: 70%;
+    left:45%;
+    transform: scale(1.5);
+    transform: rotate(35deg);
+    }
+    35%{
+        top: -5%;
+        left: 60%;
+        transform: scale(1.0);
+        transform: rotate(60deg);
+    }
+    40%{
+    top: 29%;
+    left: 53%; 
+    transform: scale(0.5);
+    transform: rotate(120deg);  
+    }
+    45%{
+    top: 47%; 
+    left: 58%;
+    transform: scale(0.5);
+    transform: rotate(180deg);
+    }
+    50%{
+        top: 80%;
+        left: 63%;
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+    55%{
+    top: 5%;
+    right: 20%;
+
+    }
+    60%{
+    top: 95%;
+    left: 110%;
+    }
+    65%{
+    top: 50%;
+    right: 20%;
+
+    }
+    70%{
+    top: 65%;
+    right: 40%;
+    }
+    75%{
+    top: 90%;
+    left: 83%;    
+    }
+    80%{
+        top: 95%;
+        left: 90%;
+    }
+    100%{
+        top: 85%;
+        left: 110%;  
+    }
+
+}
+
+@keyframes road3{
+    0%{
+        top: 35%;
+        left: -80px;
+    }
+    50%{
+        top: 70%;
+        left: 89%;
+    }
+    80%{
+        bottom: 95%;
+        left: 95%;
+    }
+    100%{
+    top: 65%; 
+    left: 105%;
+    }
+}
+@keyframes road4{
+    0%{
+        top: 35%;
+        left: -80px;
+    }
+    15%{
+        top: 90%;
+        left: 5%;
+    }
+    30%{
+        top: 10%;
+        left: 45%;
+    }
+    45%{
+        top: 75%;
+        right: 50%;
+    }
+    60%{
+        top: 35%;
+        left: 65%;
+    }
+    75%{
+        top: 80%;
+        left: 90%;
+    }
+    85%{
+        top: 10%;
+        left: 95%;
+    }
+    100%{
+        top: 25%;
+        right: 110%;
+    }
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+	font-family: 'GolosTextWebBlack';
+	src:
+		url('../fonts/Golos-Text_Black.woff2') format('woff2'),
+		url('../fonts/Golos-Text_Black.woff') format('woff'),
+        url('../fonts/Golos-Text_Black.ttf') format('ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    counter-reset: shot;
+    position: relative;
+    background-image: url("../img/Games_Duck_Hunt_Nintendo_Dendy_Nes_025749_9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 bottom;
+    cursor: crosshair;
+    overflow: hidden;
+
+}
+
+.listShot{
+    font-family: 'GolosTextWebBlack';
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 50px;
+    color: #fff;
+}
+
+input[type="checkbox"]:checked{
+    counter-increment: shot;
+
+}
+input[type="checkbox"]{
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked + label{
+    display: none;
+}  
+
+.listShot::after{
+    content: counter(shot);
+}
+.listShot{
+    color: rgb(231, 8, 8);
+}
+
+.duck{
+    display: block;
+    width: 62px;
+    height: 56px;
+    cursor: crosshair;
+    position:  absolute;
+    top: 50%;
+    left: -80px;
+}
+
+.duck1{
+    animation: road1 10s;
+}
+
+.duck2{
+    animation: road1 8s 5s;
+}
+
+.duck3{
+    animation: road2 9s 7s;
+}
+.duck4{
+    animation: road3 2s 12s;
+}
+.duck5{
+    animation: road4 8s 14s ;
+}
+.duck6{
+    animation: road3 1s 15s;
+}
+.duck7{
+    animation: road2 6s 18s ;
+}
